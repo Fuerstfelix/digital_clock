@@ -9,6 +9,8 @@ mov bx, 7c00h
 int 13h
 xor bx, bx
 xor cx, cx
+xor ax, ax
+xor dx, dx
 mov al, 0xa
 call draw
 mov al, 0x20
