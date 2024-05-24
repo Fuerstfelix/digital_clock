@@ -1,13 +1,14 @@
 [org 0x7c00]
-
-mov ax, 0x0000
+xor ax, ax
 mov ds, ax
 mov es, ax
 mov ax, 0x0201
-mov cx, 0x0002
+mov cx, 0x0001
 mov dh, 0
+mov bx, 7c00h
 int 13h
-
+xor bx, bx
+xor cx, cx
 mov al, 0xa
 call draw
 mov al, 0x20
@@ -62,6 +63,5 @@ getTime:
 mov ah, 0x02
 int 1ah
 ret
-
 times 510-($-$$) db 0
 db 0x55, 0xaa
